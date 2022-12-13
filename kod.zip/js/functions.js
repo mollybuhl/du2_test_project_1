@@ -18,7 +18,12 @@ function click_filter_element (event) {
     NO RETURN VALUE
 
   */
+
+    const clicked = event.currentTarget;
+    clicked.classList.toggle("selected");
+    //!Borde den toggla mellan unselected/selected eller räcker det med selected?
   
+    update_programmes();
 }
 
 
