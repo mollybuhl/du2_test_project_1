@@ -25,6 +25,17 @@ function click_filter_element (event) {
 // G
 // CODE according to specification
 function create_filter_element (data) {
+  const parent = data.parent;
+
+  const new_dom_element = document.createElement("li");
+  new_dom_element.classList.add(data.class);
+  parent.appendChild(new_dom_element);
+
+  new_dom_element.textContent = data.textContent;
+  new_dom_element.addEventListener("click", click_filter_element);
+
+  return new_dom_element;
+  
 
   /*
     ARGUMENTS
@@ -134,6 +145,11 @@ function create_countries_cities_filters () {
 // ABSTRACT AND WRITE SPECIFICATION
 //    As you can see, all three functions below do basically the same thing.
 //    Abstract them to one function, and write the specification of that function.
+
+function create_filter(){
+
+}
+
 function create_levels_filter () {
   function create_level (level) {
     const dom = create_filter_element({
