@@ -30,6 +30,9 @@ update_programmes();
 // Example: Click anywhere on the language-filter-container and all the language filters
 // (spanska, svenska, engelska, franska) will toggle.
 
+let test = document.querySelector("#others_filter .filter_container");
+document.querySelector("#others_filter .filter_container").addEventListener("click",add_group_toggling)
+console.log(test);
 
 // VG
 // Add Interaction of button toggle-all-cities

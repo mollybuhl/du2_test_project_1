@@ -13,7 +13,7 @@ function click_filter_element (event) {
       programmes must be updated.
 
       Attention VG
-        Careful with the propagation of the click-event
+        Careful with the propagation of the click-event!?
 
     NO RETURN VALUE
 
@@ -22,7 +22,6 @@ function click_filter_element (event) {
     const clicked = event.currentTarget;
     clicked.classList.toggle("selected");
     //!Borde den toggla mellan unselected/selected eller räcker det med selected?
-    //Propagation?
   
     update_programmes();
 }
@@ -84,6 +83,15 @@ function add_group_toggling (filter_container_dom) {
     NO RETURN VALUE
 
   */
+
+  /*
+  ????
+  console.log(filter_container_dom); 
+ console.log(filter_container_dom.originalTarget.children[1].firstChild);
+ let first_child = filter_container_dom.originalTarget.children[1].firstChild;
+ first_child.classList.toggle("selected");
+ console.log(first_child.classList)
+*/
   
 }
 
@@ -239,7 +247,8 @@ function update_programmes () {
 
   */
 
-  
+  //let programs = read_filters();
+  //array_each(programs, )
 
 }
 
@@ -254,7 +263,6 @@ function update_programmes () {
 function read_filters () {
   
   const city_selected_dom = document.querySelectorAll("#country_filter li.selected");
-  //create array of all list elements in #country_filter that are selected
 
   const city_id_selected = [];
   function callback_add_cityID (dom_element) {
@@ -262,7 +270,6 @@ function read_filters () {
     city_id_selected.push(id_as_integer);
   }
   array_each(city_selected_dom, callback_add_cityID);
-//A new array is created with all selected elements id's?
 
   const universities = [];
   for (let i = 0; i < city_id_selected.length; i++) {
@@ -273,7 +280,6 @@ function read_filters () {
         universities.push(university);
       }
     }
-    //Skapar en ny array (universities) med alla universitet som tillhör varje id?
   }
 
   let programmes = [];
