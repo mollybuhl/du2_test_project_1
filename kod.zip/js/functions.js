@@ -164,11 +164,11 @@ function create_countries_cities_filters () {
 function create_filters(){
   function create_filter(data){
     const dom = create_filter_element ({
-      parent: document.querySelector("#level_filter > ul"),
+      parent: document.querySelector(`#level_filter > ul`),
       class: "selected",
       textContent: data.name,
     });
-    console.log(dom);
+
     dom.dataset.id = data.id;
   }
 
